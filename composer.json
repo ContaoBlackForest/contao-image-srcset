@@ -1,0 +1,60 @@
+{
+	"name": "contaoblackforest/contao-image-srcset",
+	"description": "Contao Image SrcSet for Contao OpenSource CMS",
+	"keywords": [
+		"contao",
+		"frontend",
+		"image",
+		"srcset",
+		"responsive",
+		"module"
+	],
+	"type": "contao-module",
+	"homepage": "",
+	"license": "LGPL-3.0+",
+	"authors": [
+		{
+			"name": "Sven Baumann",
+			"email": "baumann.sv@gmail.com",
+			"homepage": "",
+			"role": "Developer"
+		},
+		{
+			"name": "Dominik Tomasi",
+			"email": "dominik.tomasi@gmail.com",
+			"homepage": "",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"email": "baumann.sv@gmail.com",
+		"issues": "https://github.com/ContaoBlackforest/contao-image-srcset/issues",
+		"wiki": "https://github.com/ContaoBlackforest/contao-image-srcset/wiki",
+		"irc": "irc://irc.freenode.org/contao.dev",
+		"source": "https://github.com/ContaoBlackforest/contao-image-srcset"
+	},
+	"require": {
+		"php": ">=5.3",
+		"contao/core": ">=3.2-dev,<4-dev",
+		"contao-community-alliance/composer-installer": "~1.6",
+		"menatwork/contao-multicolumnwizard": "*"
+	},
+	"require-dev": {},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"autoload": {
+		"psr-4": {
+			"ContaoBlackforest\\": "src/"
+		}
+	},
+	"extra": {
+		"contao": {
+			"sources": {
+				"contao": "system/modules/contao-image-srcset"
+			}
+		},
+		"branch-alias": {
+			"dev-develop": "1.0.x-dev"
+		}
+	}
+}

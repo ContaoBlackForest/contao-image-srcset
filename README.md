@@ -35,4 +35,4 @@ In the file management the adjustments at the main frame accordingly. The result
 
 ![alt text][preview_file]
 
-[preview_file]: common/preview_file.tiff "Preview file edit view"
+[preview_file]: https://raw.githubusercontent.com/ContaoBlackforest/contao-image-srcset/master/blob/master/preview_file.jpg "Preview file edit view"

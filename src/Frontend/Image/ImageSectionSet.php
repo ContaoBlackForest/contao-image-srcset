@@ -180,7 +180,13 @@ class ImageSectionSet extends \FrontendTemplate
 							}
 
 							if ($srcSet) {
-								$srcSet .= ' ' . $set['attributeSrcSet'];
+								$attributes = array('w', 'h', 'x');
+
+								foreach ($attributes as $attribute) {
+									if ($set['attributeSrcSet_' . $attribute] && $set['attributeSrcSet_' . $attribute] != '-') {
+										$srcSet .= ' ' . $set['attributeSrcSet_' . $attribute] . $attribute;
+									}
+								}
 							}
 						}
 					}

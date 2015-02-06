@@ -56,11 +56,25 @@ $fields = array
 			'tl_class'     => 'clr',
 			'columnFields' => array
 			(
-				'attributeSrcSet'       => array
+				'attributeSrcSet_w'     => array
 				(
-					'label'     => &$GLOBALS['TL_LANG']['tl_files']['attributeSrcSet'],
+					'label'     => &$GLOBALS['TL_LANG']['tl_files']['attributeSrcSet_w'],
 					'inputType' => 'text',
-					'eval'      => array('style' => 'width:180px'),
+					'eval'      => array('style' => 'width:90px'),
+				),
+				'attributeSrcSet_h'     => array
+				(
+					'label'     => &$GLOBALS['TL_LANG']['tl_files']['attributeSrcSet_h'],
+					'inputType' => 'text',
+					'eval'      => array('style' => 'width:90px'),
+				),
+				'attributeSrcSet_x'     => array
+				(
+					'label'     => &$GLOBALS['TL_LANG']['tl_files']['attributeSrcSet_x'],
+					'inputType' => 'select',
+					'default'   => '-',
+					'options'   => array('-', '1', '1.3', '1.325', '1.5', '1.7', '2', '2.22', '2.6', '2.4', '3', '3.5', '4'),
+					'eval'      => array('style' => 'width:45px')
 				),
 				'imageForSrcSet'        => array
 				(

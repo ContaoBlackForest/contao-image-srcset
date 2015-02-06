@@ -27,6 +27,7 @@ class ImageSectionSet extends \FrontendTemplate
 
 	/**
 	 * image cache
+	 *
 	 * @var $images
 	 */
 	protected static $images;
@@ -34,6 +35,7 @@ class ImageSectionSet extends \FrontendTemplate
 
 	/**
 	 * cache the images to static::$images
+	 *
 	 * @param $template
 	 *
 	 * @throws \Exception
@@ -84,6 +86,7 @@ class ImageSectionSet extends \FrontendTemplate
 
 	/**
 	 * init the method to modify the tag
+	 *
 	 * @param $buffer
 	 * @param $template
 	 *
@@ -111,6 +114,7 @@ class ImageSectionSet extends \FrontendTemplate
 
 	/**
 	 * search img tag of source code
+	 *
 	 * @param $buffer
 	 *
 	 * @return string
@@ -133,6 +137,7 @@ class ImageSectionSet extends \FrontendTemplate
 
 	/**
 	 * modify the img tag with srcset attribute
+	 *
 	 * @param $img
 	 *
 	 * @return mixed|string
@@ -152,48 +157,56 @@ class ImageSectionSet extends \FrontendTemplate
 			if ($file && $file->next() && $file->activateSrcSet && $file->imageSrcSet) {
 				$file->imageSrcSet = deserialize($file->imageSrcSet);
 
-				$srcSet = '';
+				if (is_array($file->imageSrcSet)) {
 
-				foreach ($file->imageSrcSet as $set) {
-					if (!$set['imageForSrcSetDisable']) {
-						if ($srcSet) {
-							$srcSet .= ', ';
+					$srcSet = '';
+
+					foreach ($file->imageSrcSet as $set) {
+						if (!$set['imageForSrcSetDisable']) {
+							if ($srcSet) {
+								$srcSet .= ', ';
+							}
+
+							if (!$set['imageForSrcSet']) {
+								$srcSet .= $oriPath;
+							}
+
+							if ($set['imageForSrcSet']) {
+								$fileSet = \FilesModel::findByUuid($set['imageForSrcSet']);
+
+								if ($fileSet) {
+									$srcSet .= $fileSet->path;
+								}
+							}
+
+							if ($srcSet) {
+								$attributes = array('w', 'h', 'x');
+
+								foreach ($attributes as $attribute) {
+									if ($set['attributeSrcSet_' . $attribute] && $set['attributeSrcSet_' . $attribute] != '-') {
+										$srcSet .= ' ' . $set['attributeSrcSet_' . $attribute] . $attribute;
+									}
+								}
+							}
 						}
+					}
 
-						if (!$set['imageForSrcSet']) {
-							$srcSet .= $oriPath;
-						}
+					if ($srcSet) {
+						$attributes = array('width', 'height');
 
-						if ($set['imageForSrcSet']) {
-							$fileSet = \FilesModel::findByUuid($set['imageForSrcSet']);
-
-							if ($fileSet) {
-								$srcSet .= $fileSet->path;
+						foreach ($attributes as $attribute) {
+							if ($value = $this->getAttribute($img, $attribute)) {
+								$img = str_replace(' ' . $value, '', $img);
 							}
 						}
 
-						if ($srcSet) {
-							$srcSet .= ' ' . $set['attributeSrcSet'];
+						if ($value = $this->getAttribute($img, 'alt')) {
+							$img = str_replace($value, ' srcset="' . $srcSet . '" ' . $value, $img);
+						}
+						else {
+							$img .= ' srcset="' . $srcSet . '"';
 						}
 					}
-				}
-
-				if ($srcSet) {
-					$attributes = array('width', 'height');
-
-					foreach ($attributes as $attribute) {
-						if ($value = $this->getAttribute($img, $attribute)) {
-							$img = str_replace(' ' . $value, '', $img);
-						}
-					}
-
-					if ($value = $this->getAttribute($img, 'alt')) {
-						$img = str_replace($value, ' srcset="' . $srcSet . '" ' . $value, $img);
-					}
-					else {
-						$img .= ' srcset="' . $srcSet . '"';
-					}
-
 				}
 			}
 		}
@@ -204,6 +217,7 @@ class ImageSectionSet extends \FrontendTemplate
 
 	/**
 	 * return an attribute from tag
+	 *
 	 * @param $tag
 	 * @param $type
 	 *

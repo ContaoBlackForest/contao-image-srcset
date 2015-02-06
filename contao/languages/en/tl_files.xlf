@@ -3,19 +3,25 @@
 	<file datatype="php" original="system/modules/contao-image-srcset/languages/en/tl_files.php" source-language="en">
 		<body>
 			<trans-unit id="tl_files.activateSrcSet.0">
-				<source>Enable images set</source>
+				<source>Enable image set</source>
 			</trans-unit>
 			<trans-unit id="tl_files.activateSrcSet.1">
-				<source>With this setting you enable the images set for this image.</source>
+				<source>With this setting you enable the image set for this image.</source>
 			</trans-unit>
 			<trans-unit id="tl_files.imageSrcSet.0">
-				<source>Images set settings</source>
+				<source>Image settings</source>
 			</trans-unit>
 			<trans-unit id="tl_files.imageSrcSet.1">
-				<source>The pictures sets settings for this image. If no picture is selected the original image is used.</source>
+				<source>The picture sets settings for this image. If no picture is selected the original image is used.</source>
 			</trans-unit>
-			<trans-unit id="tl_files.attributeSrcSet">
-				<source>x-Value or w-Value</source>
+			<trans-unit id="tl_files.attributeSrcSet_w">
+				<source>w-Value</source>
+			</trans-unit>
+			<trans-unit id="tl_files.attributeSrcSet_h">
+				<source>h-Value</source>
+			</trans-unit>
+			<trans-unit id="tl_files.attributeSrcSet_x">
+				<source>x-Value</source>
 			</trans-unit>
 			<trans-unit id="tl_files.imageForSrcSet">
 				<source>Picture</source>

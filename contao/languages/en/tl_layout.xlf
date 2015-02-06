@@ -2,13 +2,13 @@
   <file datatype="php" original="system/modules/contao-image-srcset/languages/en/tl_layout.php" source-language="en">
     <body>
 		<trans-unit id="tl_layout.legend_imageSecSet">
-			<source>Image set settings</source>
+			<source>Image settings</source>
 		</trans-unit>
       <trans-unit id="tl_layout.activateImageSecSet.0">
         <source>Activate image set</source>
       </trans-unit>
       <trans-unit id="tl_layout.activateImageSecSet.1">
-        <source>For the layout of this page, enable images set.</source>
+        <source>For the layout of this page enable image set.</source>
       </trans-unit>
     </body>
   </file>

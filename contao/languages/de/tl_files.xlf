@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<xliff version="1.1">
+	<file datatype="php" original="system/modules/contao-image-srcset/languages/en/tl_files.php" source-language="en">
+		<body>
+			<trans-unit id="tl_files.activateSrcSet.0">
+				<source>Enable images set</source>
+				<target>Bilder Set aktivieren</target>
+			</trans-unit>
+			<trans-unit id="tl_files.activateSrcSet.1">
+				<source>With this setting you enable the images set for this image.</source>
+				<target>Mit dieser Einstellung aktivieren Sie das Bilder Set für dieses Bild.</target>
+			</trans-unit>
+			<trans-unit id="tl_files.imageSrcSet.0">
+				<source>Images set settings</source>
+				<target>Bilder Set Einstellungen</target>
+			</trans-unit>
+			<trans-unit id="tl_files.imageSrcSet.1">
+				<source>The pictures sets settings for this image. If no picture is selected the original image is used.</source>
+				<target>Die Bilder Sets einstellen für dieses Bild. Wenn kein Bild ausgewählt wurde wird das Originalbild benutzt.</target>
+			</trans-unit>
+			<trans-unit id="tl_files.attributeSrcSet">
+				<source>x-Value or w-Value</source>
+				<target>x-Wert oder w-Wert</target>
+			</trans-unit>
+			<trans-unit id="tl_files.imageForSrcSet">
+				<source>Picture</source>
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="tl_files.imageForSrcSetDisable">
+				<source>disable</source>
+				<target>deaktivieren</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

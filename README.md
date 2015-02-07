@@ -11,7 +11,7 @@ System requirements
  * PHP 5.3.2+ with GDlib, DOM, Phar and SOAP
  * MySQL 5.0.3+
  * contao-core >=3.2-dev,<4-dev
- * contao-community-alliance/composer-installer
+ * contao-community-alliance/composer-plugin
  * menatwork/contao-multicolumnwizard
 
 Installation
